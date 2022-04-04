@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1acc22492de4aa289f314eea92bbd67, type: 3}
+  m_Name: PrefabsBase
+  m_EditorClassIdentifier: 
+  prefabs:
+  - Name: MainCamera
+    GameObject: {fileID: 2181769509312897065, guid: 40668d4469e9b774397e05935f8264a1, type: 3}
+  - Name: Player
+    GameObject: {fileID: 959035790913744268, guid: 1f557a70aec48a241b2d5144cb9d8e36, type: 3}
+  - Name: Character
+    GameObject: {fileID: 8170496155426976289, guid: 3094fe17ec352f24bb20191ced1dca05, type: 3}
+  - Name: Portal-Default
+    GameObject: {fileID: 2734896531528817294, guid: 8c01a5ad06c5f61429b621b5745bc326, type: 3}
+  - Name: Red
+    GameObject: {fileID: 5001003090399505857, guid: 537591271db848d4b9c38766ee7775d3, type: 3}
+  - Name: Green
+    GameObject: {fileID: 1200433202038382720, guid: 17744704439911a408ee42a0606aabe9, type: 3}
+  - Name: Blue
+    GameObject: {fileID: 5001003090399505857, guid: 501123cc61e913c45827e7039b32e040, type: 3}
+  - Name: SphereEffect
+    GameObject: {fileID: 1782769943665936, guid: b7fa0f127c288494d9360e7ad65ecc17, type: 3}
+  - Name: ConfettiParticle
+    GameObject: {fileID: 6039046686340658965, guid: 4ca6b2c4a4233d0499039e8452157323, type: 3}
+  - Name: Purple
+    GameObject: {fileID: 5001003090399505857, guid: 56b78579f3bbbdb44a1169a5b4755933, type: 3}

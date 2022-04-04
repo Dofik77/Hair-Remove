@@ -1,0 +1,1 @@
+public enum EScene { SplashScene, LoadingScene, MainMenu, Game0_1, Game0_2, Game0__3, Game1, Game2, Game3, Game4, Game5, Game6, Game6_1, Game6_2, Game7, Game8, Game9, Game10, Game11, Game12, Game13, Game14, Game15, }
