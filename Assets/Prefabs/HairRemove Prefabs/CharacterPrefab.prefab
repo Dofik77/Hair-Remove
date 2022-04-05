@@ -1735,7 +1735,6 @@ GameObject:
   m_Component:
   - component: {fileID: 959035790913561462}
   - component: {fileID: 959035790923398200}
-  - component: {fileID: 2722359747076850381}
   m_Layer: 0
   m_Name: CharacterPrefab
   m_TagString: Untagged
@@ -1788,26 +1787,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2722359747076850381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 959035790913744268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 642d9a5c0ad240cb953fc824796adfa7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 959035790923398200}
-  modelRoot: {fileID: 4910827143581398970}
-  camera: {fileID: 6333449142987872158}
-  models:
-  - {fileID: 959035790913899796}
-  - {fileID: 959035790913714634}
-  - {fileID: 959035790913903634}
-  - {fileID: 959035790913720852}
 --- !u!1 &959035790913745408
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using Signals;
+﻿using ECS.Game.Components.Hair_Remove_Component;
+using Signals;
 using Zenject;
 
 namespace Installers
@@ -12,6 +13,7 @@ namespace Installers
             Container.DeclareSignal<SignalMakeHudButtonsVisible>();
             Container.DeclareSignal<SignalBlackScreen>();
             Container.DeclareSignal<SignalQuestionChoice>();
+            Container.DeclareSignal<SignalJoystickUpdate>();
             Container.DeclareSignal<SignalUpdateImpact>();
             Container.DeclareSignal<SignalGameEnd>();
         }

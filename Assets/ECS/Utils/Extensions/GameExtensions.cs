@@ -29,10 +29,10 @@ namespace ECS.Utils.Extensions
         public static EcsEntity CreatePlayer(this EcsWorld world)
         {
             var entity = world.NewEntity();
-            entity.Get<SpherePlayerComponent>();
+            entity.Get<PlayerComponent>();
             entity.Get<PrefabComponent>().Value = "Character";
             entity.Get<EventAddComponent<PrefabComponent>>();
-            entity.Get<EventAddComponent<SpherePlayerComponent>>();
+            entity.Get<EventAddComponent<PlayerComponent>>();
 
             return entity;
         }

@@ -1,4 +1,5 @@
 using DataBase.Game;
+using ECS.Game.Components.Hair_Remove_Component;
 using ECS.Game.Systems.GameCycle;
 using ECS.Utils.Extensions;
 using Game.SceneLoading;
@@ -34,9 +35,8 @@ namespace Runtime.Game.Ui.Windows.InGameButtons
         public void Initialize()
         {
             View.InGameMenuButton.OnClickAsObservable().Subscribe(x => OnGameMenu()).AddTo(View.InGameMenuButton);
-            View.RestartGameButton.OnClickAsObservable().Subscribe(x => OnRestart()).AddTo(View.RestartGameButton);
+            _signalBus.GetStream<SignalJoystickUpdate>().Subscribe(x => View.UpdateJoystick(ref x)).AddTo(View);
             
-            // _signalBus.GetStream<SignalJoystickUpdate>().Subscribe(x => View.UpdateJoystick(ref x)).AddTo(View);
             // _signalBus.GetStream<SignalHpBarUpdate>().Subscribe(x => View.UpdateHpBar(ref x)).AddTo(View);
             // _signalBus.GetStream<SignalLifeCountUpdate>().Subscribe(x => View.UpdateLifeCount(ref x)).AddTo(View);
             // _signalBus.GetStream<SignalScoreUpdate>().Subscribe(x => View.UpdateScore(ref x)).AddTo(View);

@@ -1,6 +1,10 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using CustomSelectables;
+using DG.Tweening;
+using ECS.Game.Components.Hair_Remove_Component;
+using ECS.Utils.Extensions;
+using Leopotam.Ecs;
 using Runtime.Services.CommonPlayerData.Data;
 using SimpleUi.Abstracts;
 using TMPro;
@@ -16,68 +20,45 @@ namespace Runtime.Game.Ui.Windows.InGameButtons
         [SerializeField] public Image JoystickButton;
         [SerializeField] public Image JoystickOrigin;
         [SerializeField] private TMP_Text _levelN;
+
+        [SerializeField] public RectTransform Vignette;
+
+        // [SerializeField] public int VignetteMultiplier;
+        // [SerializeField] public int VignetteDisableValue;
+        [SerializeField] public float _vignetteDuration = 0.3f;
+        [SerializeField] public int _maxHp = 100;
+        [SerializeField] private ProgressBar _hpBar;
+        [SerializeField] private RectTransform _hpBarRect;
         [SerializeField] public CustomButton InGameMenuButton;
-        [SerializeField] public CustomButton RestartGameButton;
 
-        // [SerializeField] private TMP_Text _score;
-        // [SerializeField] private TMP_Text _highScore;
-        // [SerializeField] private TMP_Text _lifeCount;
-
-        // [SerializeField] public RectTransform Vignette;
-        // [SerializeField] public float _vignetteDuration = 0.3f;
-        // [SerializeField] public int _maxHp = 100;
-        // [SerializeField] private ProgressBar _hpBar;
-        // [SerializeField] private RectTransform _hpBarRect;
-        
-        // [SerializeField] private TMP_Text _currency;
-        
-        
-
-        // private RectTransform _joystickButtonRT;
-        // private RectTransform _joystickOriginRT;
-        // private int _lastHp;
-        // private Color _color1 = new Color(0.347f, 0.964f, 0.185f, 1f);
-        // private Color _color2 = new Color(0.965f, 0.922f, 0.185f, 1f);
-        // private Color _color3 = new Color(0.965f, 0.185f, 0.34f, 1f);
-        // private Color _currentColor;
+        private RectTransform _joystickButtonRT;
+        private RectTransform _joystickOriginRT;
+        private int _lastHp;
+        private Color _color1 = new Color(0.347f, 0.964f, 0.185f, 1f);
+        private Color _color2 = new Color(0.965f, 0.922f, 0.185f, 1f);
+        private Color _color3 = new Color(0.965f, 0.185f, 0.34f, 1f);
+        private Color _currentColor;
 
         public void Show(CommonPlayerData playerData)
         {
             _levelN.text = Enum.GetName(typeof(EScene), playerData.Level)?.Replace("_", " ");
-            // _joystickButtonRT = JoystickButton.GetComponent<RectTransform>();
-            // _joystickOriginRT = JoystickOrigin.GetComponent<RectTransform>();
-            // _lastHp = _maxHp;
-            // SetHightScore(playerData.HighScore);
-            // UpdateCurrency(ref playerData.Money);
+            _joystickButtonRT = JoystickButton.GetComponent<RectTransform>();
+            _joystickOriginRT = JoystickOrigin.GetComponent<RectTransform>();
+            _lastHp = _maxHp;
         }
 
-        // public void UpdateJoystick(ref SignalJoystickUpdate signal)
-        // {
-        //     JoystickButton.gameObject.SetActive(signal.IsPressed);
-        //     JoystickOrigin.gameObject.SetActive(signal.IsPressed);
-        //     if (signal.IsPressed)
-        //     {
-        //         _joystickButtonRT.anchoredPosition = signal.ButtonPosition;
-        //         _joystickOriginRT.anchoredPosition = signal.OriginPosition;
-        //     }
-        // } //touc pad on view 
+        public void UpdateJoystick(ref SignalJoystickUpdate signal)
+        {
+            JoystickButton.gameObject.SetActive(signal.IsPressed);
+            JoystickOrigin.gameObject.SetActive(signal.IsPressed);
+            if (signal.IsPressed)
+            {
+                _joystickButtonRT.anchoredPosition = signal.ButtonPosition;
+                _joystickOriginRT.anchoredPosition = signal.OriginPosition;
+            }
+        }
 
-        // public void UpdateCurrency(ref int value)
-        // {
-        //     _currency.text = value.ToString();
-        // }
-        
-        // public void UpdateLifeCount(ref SignalLifeCountUpdate signal)
-        // {
-        //     _lifeCount.text = new StringBuilder("x").Append(signal.Count).ToString();
-        // }
-
-        // public void SetHightScore(int value) => _highScore.text = value.ToString();
-        
-        // public void UpdateScore(ref SignalScoreUpdate signal) => _score.text = signal.Value.ToString();
-        
-
-        // public void UpdateHpBar(ref SignalHpBarUpdate signal)
+        // public void UpdateHp(ref SignalHpUpdate signal)
         // {
         //     if (signal.Hp < _lastHp)
         //     {

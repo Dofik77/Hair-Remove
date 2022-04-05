@@ -1,6 +1,7 @@
 ﻿using ECS.Game.Systems;
 using ECS.Game.Systems.GameCycle;
 using ECS.Game.Systems.GameDay;
+using ECS.Game.Systems.Hair_Remove_System;
 using ECS.Game.Systems.Linked;
 using ECS.Game.Systems.Move;
 using ECS.Game.Systems.TheDeeperSystem;
@@ -42,11 +43,7 @@ namespace ECS.Installers
             Container.BindInterfacesAndSelfTo<CameraResizeSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<CameraLocateSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerSystem>().AsSingle();
-            Container.BindInterfacesAndSelfTo<PipeSystem>().AsSingle();
-            Container.BindInterfacesAndSelfTo<PortalSystem>().AsSingle();
-            Container.BindInterfacesAndSelfTo<LocateObjectByTagSystem>().AsSingle();
-            Container.BindInterfacesAndSelfTo<PlayerInputSystem>().AsSingle();
-            Container.BindInterfacesAndSelfTo<WallColoringSystem>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerMovementSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<OutOfCameraBorderSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<PortalEffectActivationSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<ParticleControllSystem>().AsSingle();

@@ -16,7 +16,7 @@ MonoBehaviour:
   - Name: MainCamera
     GameObject: {fileID: 2181769509312897065, guid: 40668d4469e9b774397e05935f8264a1, type: 3}
   - Name: Player
-    GameObject: {fileID: 959035790913744268, guid: 1f557a70aec48a241b2d5144cb9d8e36, type: 3}
+    GameObject: {fileID: 8689600985394126291, guid: 06ccedfe9d791db4ea8cdf4052fb790c, type: 3}
   - Name: Character
     GameObject: {fileID: 8170496155426976289, guid: 3094fe17ec352f24bb20191ced1dca05, type: 3}
   - Name: Portal-Default

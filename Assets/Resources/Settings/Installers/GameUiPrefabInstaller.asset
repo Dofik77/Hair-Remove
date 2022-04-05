@@ -19,5 +19,5 @@ MonoBehaviour:
   touchpadView: {fileID: 28076545930685498, guid: 7307750229d24054dab79fa465928138, type: 3}
   gameOverView: {fileID: 235630740065941943, guid: be35ac11a5873fc40af032f07098df30, type: 3}
   levelCompleteView: {fileID: 2066993196224163984, guid: 1ca14149482580642a74c33c80dc0a04, type: 3}
-  inGameButtonsView: {fileID: 5659588307343922049, guid: 77d6f45a83761754a9308e1d475040ef, type: 3}
+  inGameButtonsView: {fileID: 5659588307343922049, guid: 89f8c13a1c0fe674383f49db7da0662b, type: 3}
   startToPlayView: {fileID: 6788387244698734113, guid: 4e97ae05aa248304e9939106def9a07b, type: 3}
