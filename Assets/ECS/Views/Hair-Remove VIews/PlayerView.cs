@@ -12,7 +12,6 @@ namespace ECS.Views.GameCycle
     {
         [SerializeField] private Animator _animator;
         [SerializeField] private Rigidbody _rigidbody;
-        [SerializeField] private Transform _transform;
         [SerializeField] private Transform _root;
         [SerializeField] private Collider _pushTrigger;
         [SerializeField] private SkinnedMeshRenderer _renderer;
@@ -60,11 +59,6 @@ namespace ECS.Views.GameCycle
             return ref _movementLimit;
         }
 
-        public ref Transform GetTransform()
-        {
-            return ref _transform;
-        }
-        
         public ref float GetInteractionDistance()
         {
             return ref _interactionDistance;

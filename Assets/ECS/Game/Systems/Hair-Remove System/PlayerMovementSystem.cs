@@ -45,9 +45,10 @@ namespace ECS.Game.Systems.Hair_Remove_System
         private Vector2 _aspectCorrection;
         private Vector2 _movement;
         private Vector3 _tempPos;
-        private readonly float _cameraRotationDeg = 51f;
-        private float _sin = Mathf.Sin(-51f * Mathf.Deg2Rad);
-        private float _cos = Mathf.Cos(-51f * Mathf.Deg2Rad);
+        private readonly float _cameraRotationDeg = 51f;//0 - for camera ( check camera z )
+        //0 - for camera ( check camera z )
+        private float _sin = Mathf.Sin( 0 * Mathf.Deg2Rad);
+        private float _cos = Mathf.Cos(0 * Mathf.Deg2Rad);
 
         private SignalJoystickUpdate _signalJoystickUpdate =
             new SignalJoystickUpdate(false, Vector2.zero, Vector2.zero);
@@ -129,8 +130,9 @@ namespace ECS.Game.Systems.Hair_Remove_System
 
                 _playerView.GetRigidbody().AddForce(_tempPos, ForceMode.VelocityChange);
                 _playerView.GetRoot().localRotation = Quaternion.Euler(_playerView.GetRoot().localRotation.x,
-                    _cameraRotationDeg + Mathf.Atan2(_movement.x, _movement.y) * 180 / Mathf.PI,
+                    0 + Mathf.Atan2(_movement.x, _movement.y) * 180 / Mathf.PI,
                     _playerView.GetRoot().localRotation.z);
+                //0 - for camera ( check camera z )
             }
         }
 
