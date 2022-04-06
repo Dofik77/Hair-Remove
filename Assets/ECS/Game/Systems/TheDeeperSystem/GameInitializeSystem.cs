@@ -39,41 +39,20 @@ namespace ECS.Game.Systems
             if (LoadGame()) return;
             _analyticsService.SendRequest("level_started");
             CreatePlayer();
-            CreateCamera();
+            FindCamera();
             CreateTimer();
             CreateDistanceTriggers();
         }
-
-        private void CreatePotal()
+        
+        private void CreatePlayer()
         {
-            var portalOnScene = UnityEngine.Object.FindObjectsOfType<PortalView>(); 
-            
-            foreach (var view in portalOnScene)
-            {
-                var entity = _world.NewEntity();
-                entity.Get<PortalComponent>().color = view.color;//из вьюшки
-                entity.Get<EventAddComponent<PortalComponent>>();
-                entity.Get<UIdComponent>().Value = UidGenerator.Next();
-                entity.Get<LinkComponent>().View = view;
-                view.Link(entity);
-                view.Holders.SetActive(true);
-                //find all set by gamedis portal
-            }
+            var entity = _world.NewEntity();
+            entity.Get<PlayerComponent>();
+            entity.Get<PrefabComponent>().Value = "Player";
+            entity.Get<EventAddComponent<PrefabComponent>>();
+            entity.Get<EventAddComponent<PlayerComponent>>();
         }
         
-        private void CreateWall()
-        {
-            var wallOnScene = UnityEngine.Object.FindObjectsOfType<WallView>(); 
-            foreach (var view in wallOnScene)
-            {
-                var entity = _world.NewEntity();
-                entity.Get<UIdComponent>().Value = UidGenerator.Next();
-                entity.Get<LinkComponent>().View = view;
-                entity.Get<EventAddComponent<WallComponent>>();
-                view.Link(entity);
-                //find all set by gamedis wall
-            }
-        }
 
         private void CreatePipes()
         {
@@ -87,18 +66,14 @@ namespace ECS.Game.Systems
             }
         }
 
-        private void CreateCamera()
+        private void FindCamera()
         {
+            var view = UnityEngine.Object.FindObjectOfType<CameraView>(true);
             var entity = _world.NewEntity();
+            entity.Get<UIdComponent>().Value = UidGenerator.Next();
             entity.Get<CameraComponent>();
-            entity.Get<PrefabComponent>().Value = "MainCamera";
-            entity.Get<EventAddComponent<PrefabComponent>>();
-            entity.Get<EventAddComponent<CameraComponent>>();
-            entity.Get<ActiveCameraComponent>();
-
-            //if have PrefabComponent, we have to Get EventAddComponent<PrefabComp>
-            //maybe relacate in Extension and just find camera on scee and get some
-            //component
+            entity.Get<LinkComponent>().View = view;
+            view.Link(entity);
         }
 
         public void CreateDistanceTriggers()
@@ -133,15 +108,6 @@ namespace ECS.Game.Systems
             var entity = _world.NewEntity();
             entity.Get<TimerComponent>();
             entity.Get<UIdComponent>().Value = UidGenerator.Next();
-        }
-
-        private void CreatePlayer()
-        {
-            var entity = _world.NewEntity();
-            entity.Get<PlayerComponent>();
-            entity.Get<PrefabComponent>().Value = "Player";
-            entity.Get<EventAddComponent<PrefabComponent>>();
-            entity.Get<EventAddComponent<PlayerComponent>>();
         }
     }
 }

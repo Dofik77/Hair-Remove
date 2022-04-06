@@ -32,7 +32,7 @@ namespace ECS.Game.Systems
             foreach (var camera in _filterCamera)
             {
                 var cameraView = (CameraView) _filterCamera.Get2(camera).View;
-                actualCamera = cameraView._camera;
+                actualCamera = cameraView.GetCamera();
             }
 
             return actualCamera != null ? actualCamera : null;

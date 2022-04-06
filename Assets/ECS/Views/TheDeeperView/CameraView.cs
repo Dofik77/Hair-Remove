@@ -10,11 +10,12 @@ namespace ECS.Views.Impls
         [Range(0f, 1f)] [SerializeField] private float _widthOrHeight = 0;
         public Vector2 DefaultResolution => _defaultResolution;
         public float WidthOrHeight => _widthOrHeight;
-        public Camera _camera;
         private float _targetAspect;
         public ref float GetTargetAspect() => ref _targetAspect;
         private float _horizontalFov = 120f;
         public ref float GetHorizontalFov() => ref _horizontalFov;
+        
+        private Camera _camera;
 
 
         public override void Link(EcsEntity entity)

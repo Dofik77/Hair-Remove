@@ -98,4 +98,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _defaultResolution: {x: 1080, y: 1920}
   _widthOrHeight: 0
-  _camera: {fileID: 0}
