@@ -22,6 +22,7 @@ using Runtime.Services.GameStateService;
 using Services.Uid;
 using Signals;
 using UnityEngine;
+using use.ECS.Game.Systems.Hair_Remove_System;
 using Zenject;
 using Object = System.Object;
 
@@ -40,7 +41,6 @@ namespace ECS.Game.Systems
             if (LoadGame()) return;
             _analyticsService.SendRequest("level_started");
             CreatePlayer();
-            CreateInteractables();
             FindCamera();
             FindGrasses();
             CreateTimer();
@@ -56,20 +56,7 @@ namespace ECS.Game.Systems
             entity.Get<EventAddComponent<PlayerComponent>>();
             entity.Get<ImpactComponent>().Value = 100;
         }
-        
-        private void CreateInteractables()
-        {
-            var interFromScene = UnityEngine.Object.FindObjectsOfType<InteractableView>();
-            foreach (var link in interFromScene)
-            {
-                var entity = _world.NewEntity();
-                entity.Get<InteractableComponent>();
-                link.Link(entity);
-                entity.Get<LinkComponent>().View = link;
-                link.SetTriggerAction(() => entity.Get<AddImpactEventComponent>());
-            }
-        }
-        
+
 
         private void FindGrasses()
         {
@@ -78,10 +65,9 @@ namespace ECS.Game.Systems
             {
                 var entity = _world.NewEntity();
                 entity.Get<InteractableComponent>();
-                entity.Get<GrassComponent>();
+                entity.Get<HairComponent>();
                 view.Link(entity);
                 entity.Get<LinkComponent>().View = view;
-
                 entity.Get<UIdComponent>().Value = UidGenerator.Next();
             }
         }

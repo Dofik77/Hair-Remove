@@ -131,13 +131,14 @@ namespace ECS.Game.Systems.Hair_Remove_System
                 _playerView.GetRigidbody().AddForce(_tempPos, ForceMode.VelocityChange);
                 
                 
-                // _playerView.GetRoot().localRotation = Quaternion.Euler(_playerView.GetRoot().localRotation.x,
+                // _playerView.GetRoot().rotation = Quaternion.Euler(_playerView.GetRoot().localEulerAngles.x,
                 //     0 + Mathf.Atan2(_movement.x, _movement.y) * 180 / Mathf.PI,
-                //     _playerView.GetRoot().localRotation.z);
+                //     _playerView.GetRoot().localEulerAngles.z); 
+                
                 
                 _playerView.GetRoot().rotation = Quaternion.Euler(100,
                     0 + Mathf.Atan2(_movement.x, _movement.y) * 180 / Mathf.PI,
-                    0);
+                    0); // принимает и возвращает в градусах
                 
                 //0 - for camera ( check camera z )
             }

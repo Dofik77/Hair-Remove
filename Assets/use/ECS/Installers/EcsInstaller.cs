@@ -9,6 +9,7 @@ using Game.Utils.MonoBehUtils;
 using Leopotam.Ecs;
 using Runtime.DataBase.Objects.Impl;
 using UnityEngine;
+using use.ECS.Game.Systems.Hair_Remove_System;
 using Zenject;
 
 namespace ECS.Installers
@@ -44,7 +45,7 @@ namespace ECS.Installers
             Container.BindInterfacesAndSelfTo<CameraLocateSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<AddImpactToPlayerSystem>().AsSingle();
-            Container.BindInterfacesAndSelfTo<GrassDeactivateSystem>().AsSingle();
+            Container.BindInterfacesAndSelfTo<HairsDeactivateSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerMovementSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<OutOfCameraBorderSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<PortalEffectActivationSystem>().AsSingle();

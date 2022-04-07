@@ -4,6 +4,7 @@ using ECS.Views.Impls;
 using Ecs.Views.Linkable.Impl;
 using Leopotam.Ecs;
 using UnityEngine;
+using Zenject;
 
 namespace ECS.Views.GameCycle
 {
@@ -11,7 +12,6 @@ namespace ECS.Views.GameCycle
     public class PlayerView : LinkableView
     {
         [SerializeField] private Collider _scissors;
-        
         [SerializeField] private Animator _animator;
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private Transform _root;
@@ -46,25 +46,26 @@ namespace ECS.Views.GameCycle
 
         private Material _originMaterial;
         
-        public ref Transform GetRoot()
-        {
-            return ref _root;
-        }
+        public ref Transform GetRoot() => ref _root;
+
+        public ref float GetSensitivity() => ref _sensitivity;
         
-        public ref float GetSensitivity()
+        public ref float GetMovementLimit() => ref _movementLimit;
+        
+        public ref Collider GetScissors() => ref _scissors;
+
+        public ref Rigidbody GetRigidbody() => ref _rigidbody;
+       
+        public ref float GetMovementSpeed() => ref _movementSpeed;
+       
+        public ref Collider GetPushTrigger() =>  ref _pushTrigger;
+      
+        
+        public ref float GetRigidbodyPushForceMultiplier()
         {
-            return ref _sensitivity;
+            return ref _rigidbodyPushForceMultiplier;
         }
 
-        public ref float GetMovementLimit()
-        {
-            return ref _movementLimit;
-        }
-
-        public ref Collider GetScissors()
-        {
-            return ref _scissors;
-        }
 
         public ref float GetInteractionDistance()
         {
@@ -105,25 +106,7 @@ namespace ECS.Views.GameCycle
             _animator.SetInteger(Stage, TakeHit);
         }
        
-        public ref Rigidbody GetRigidbody()
-        {
-            return ref _rigidbody;
-        }
-        
-        public ref float GetMovementSpeed()
-        {
-            return ref _movementSpeed;
-        }
-        
-        public ref float GetRigidbodyPushForceMultiplier()
-        {
-            return ref _rigidbodyPushForceMultiplier;
-        }
-        
-        public ref Collider GetPushTrigger()
-        {
-            return ref _pushTrigger;
-        }
+      
 
         public ref float GetAfterDamageInvincibleDuration()
         {

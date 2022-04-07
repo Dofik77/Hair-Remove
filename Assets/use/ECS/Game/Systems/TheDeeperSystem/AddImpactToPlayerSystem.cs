@@ -18,7 +18,8 @@ namespace ECS.Game.Systems
         [Inject] private readonly SignalBus _signalBus;
         private readonly EcsFilter<PlayerComponent, ImpactComponent, LinkComponent> _player;
         private readonly EcsFilter<GameStageComponent> _gameStage;
-        protected override bool DeleteEvent => false;
+        protected override bool DeleteEvent => true;
+        //true!!!! 
         protected override EcsFilter<AddImpactEventComponent> ReactiveFilter { get; }
         protected override void Execute(EcsEntity entity)
         {
@@ -34,14 +35,11 @@ namespace ECS.Game.Systems
             }
             else playerImpact += impact;
             _signalBus.Fire(new SignalUpdateImpact(playerImpact));
-            Debug.Log(playerImpact);
-            // var playerLink = (PlayerView) _player.Get3(0).View;
-            // playerLink.SetStage(playerImpact.ComparePlayerStage());
-            // entity.Destroy()
-            // в коде меняется моделька персонажа -> код для экономики
             
-            entity.Del<AddImpactEventComponent>();
-
+            Debug.Log(playerImpact);
+            // var playerLink = (PlayerView) _player.Get3(0).View;  
+            // playerLink.SetStage(playerImpact.ComparePlayerStage());
+            // в коде меняется моделька персонажа -> код для экономики
         }
     }
 }
