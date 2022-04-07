@@ -11,7 +11,7 @@ namespace ECS.Views.GameCycle
     [SuppressMessage("ReSharper", "Unity.InefficientPropertyAccess")]
     public class PlayerView : LinkableView
     {
-        [SerializeField] private Collider _scissors;
+        [SerializeField] private Collider _razor;
         [SerializeField] private Animator _animator;
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private Transform _root;
@@ -52,7 +52,7 @@ namespace ECS.Views.GameCycle
         
         public ref float GetMovementLimit() => ref _movementLimit;
         
-        public ref Collider GetScissors() => ref _scissors;
+        public ref Collider GetRazor() => ref _razor;
 
         public ref Rigidbody GetRigidbody() => ref _rigidbody;
        

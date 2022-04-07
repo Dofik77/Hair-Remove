@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 3490785306119617618}
   - component: {fileID: 7468620036397701472}
   m_Layer: 0
-  m_Name: scissors
+  m_Name: razor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f79d295c14b745cdb2cf9fe16f9da748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scissors: {fileID: 7468620036397701472}
+  _razor: {fileID: 7468620036397701472}
   _animator: {fileID: 8878863931815997669}
   _rigidbody: {fileID: 4621072122309176089}
   _root: {fileID: 8389131453040322575}
