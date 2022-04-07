@@ -6,72 +6,72 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SplashScene.unity
+    path: Assets/use/Scenes/SplashScene.unity
     guid: f30040d5f771b744dbf2c01203a29ac1
   - enabled: 1
-    path: Assets/Scenes/LoadingScene.unity
+    path: Assets/use/Scenes/LoadingScene.unity
     guid: 2da6cdddf8e92cd4b93982aa3ac5fb65
   - enabled: 0
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/use/Scenes/MainMenu.unity
     guid: 7ff2b8f80f5a9d847a32bf23ed118238
   - enabled: 1
-    path: Assets/Scenes/Game0_1.unity
+    path: Assets/use/Scenes/Game0_1.unity
     guid: 52ac9f4765e8a3f468570b78abb7f662
   - enabled: 1
-    path: Assets/Scenes/Game0_2.unity
+    path: Assets/use/Scenes/Game0_2.unity
     guid: 0f49ca68b1256b740aca6e05d8b83e58
   - enabled: 1
-    path: Assets/Scenes/Game0__3.unity
+    path: Assets/use/Scenes/Game0__3.unity
     guid: 339bdc4699aac0649a4ebfc4fd6c7af7
   - enabled: 1
-    path: Assets/Scenes/Game1.unity
+    path: Assets/use/Scenes/Game1.unity
     guid: cda62429413367d4a84bd13d2c26c9b1
   - enabled: 1
-    path: Assets/Scenes/Game2.unity
+    path: Assets/use/Scenes/Game2.unity
     guid: b17768063a9d3aa409a169d65181b022
   - enabled: 1
-    path: Assets/Scenes/Game3.unity
+    path: Assets/use/Scenes/Game3.unity
     guid: 7ee79a24fb4d59e4bbec20f0afdc7f4f
   - enabled: 1
-    path: Assets/Scenes/Game4.unity
+    path: Assets/use/Scenes/Game4.unity
     guid: b5c091f279560b145bc53ed076ce0ba1
   - enabled: 1
-    path: Assets/Scenes/Game5.unity
+    path: Assets/use/Scenes/Game5.unity
     guid: 9bbd05aa7dbedee45838a7da181e6254
   - enabled: 1
-    path: Assets/Scenes/Game6.unity
+    path: Assets/use/Scenes/Game6.unity
     guid: 86096fed9c69ab7458744bd465024808
   - enabled: 1
-    path: Assets/Scenes/Game6_1.unity
+    path: Assets/use/Scenes/Game6_1.unity
     guid: 5de45f421cdb0cf4f83d75445d2ebf73
   - enabled: 1
-    path: Assets/Scenes/Game6_2.unity
+    path: Assets/use/Scenes/Game6_2.unity
     guid: c6d911a2049c3914997145a078bbcdb6
   - enabled: 1
-    path: Assets/Scenes/Game7.unity
+    path: Assets/use/Scenes/Game7.unity
     guid: 093ba73434049a04e882995a892c6da2
   - enabled: 1
-    path: Assets/Scenes/Game8.unity
+    path: Assets/use/Scenes/Game8.unity
     guid: 691e9bc111bfc674085f68f7ee8b08ea
   - enabled: 1
-    path: Assets/Scenes/Game9.unity
+    path: Assets/use/Scenes/Game9.unity
     guid: 95920d9b59c995a4388473993811cefc
   - enabled: 1
-    path: Assets/Scenes/Game10.unity
+    path: Assets/use/Scenes/Game10.unity
     guid: ef0f21e144c7f8c4bbecd1d322a04080
   - enabled: 1
-    path: Assets/Scenes/Game11.unity
+    path: Assets/use/Scenes/Game11.unity
     guid: 3f4b7d2fe7758cd45807dcbbffe26ed5
   - enabled: 1
-    path: Assets/Scenes/Game12.unity
+    path: Assets/use/Scenes/Game12.unity
     guid: 9ccac01474a71ea4f91f92c5e8b10b18
   - enabled: 1
-    path: Assets/Scenes/Game13.unity
+    path: Assets/use/Scenes/Game13.unity
     guid: f8ef26fab3d0cb54fa1c8acaee521f4b
   - enabled: 1
-    path: Assets/Scenes/Game14.unity
+    path: Assets/use/Scenes/Game14.unity
     guid: 8bb212d301503c84e99daae34674b0da
   - enabled: 1
-    path: Assets/Scenes/Game15.unity
+    path: Assets/use/Scenes/Game15.unity
     guid: e69cc4153b7063f40be5529cf9c43ca4
   m_configObjects: {}

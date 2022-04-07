@@ -27,9 +27,9 @@ namespace Runtime.Game.Ui.Windows.InGameButtons
         // [SerializeField] public int VignetteDisableValue;
         [SerializeField] public float _vignetteDuration = 0.3f;
         [SerializeField] public int _maxHp = 100;
-        [SerializeField] private ProgressBar _hpBar;
         [SerializeField] private RectTransform _hpBarRect;
         [SerializeField] public CustomButton InGameMenuButton;
+        [SerializeField] public ProgressBar ProgressBar;
 
         private RectTransform _joystickButtonRT;
         private RectTransform _joystickOriginRT;

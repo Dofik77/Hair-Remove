@@ -6,13 +6,34 @@ namespace Runtime.Game.Ui.Windows.InGameButtons
 {
     public class ProgressBar : MonoBehaviour
     {
-        [SerializeField] private SlicedFilledImage progress;
+        [System.Serializable]
+        private struct Stage
+        {
+            public Color color;
+            [Range(0, 1)]
+            public float ratio;
 
-        public void Repaint(float ratio, Color color)
+            public Stage(Color color, float ratio)
+            {
+                this.color = color;
+                this.ratio = ratio;
+            }
+        }
+
+        [SerializeField] private SlicedFilledImage progress;
+        [SerializeField] private Stage[] stages;
+
+        public void SetFillAmount(float ratio)
+        {
+            progress.fillAmount = ratio;
+            progress.color = stages.Find(x => ratio <= x.ratio).color;
+        }
+
+        public void Repaint(float ratio)
         {
             progress.DOKill();
-            progress.DOFillAmount(Mathf.Abs(ratio), 0.1f);
-            progress.DOColor(color, 0.05f);
+            progress.DOFillAmount(ratio, 0.1f);
+            progress.DOColor(stages.Find(x => ratio <= x.ratio).color, 0.1f);
         }
     }
 }
