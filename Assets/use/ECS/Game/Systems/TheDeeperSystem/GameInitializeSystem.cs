@@ -41,7 +41,7 @@ namespace ECS.Game.Systems
             if (LoadGame()) return;
             _analyticsService.SendRequest("level_started");
             CreatePlayer();
-            FindCamera();
+            CreateCameraForPlayer();
             FindGrasses();
             CreateTimer();
             CreateDistanceTriggers();
@@ -72,14 +72,14 @@ namespace ECS.Game.Systems
             }
         }
 
-        private void FindCamera()
+        private void CreateCameraForPlayer()
         {
-            var view = UnityEngine.Object.FindObjectOfType<CameraView>(true);
             var entity = _world.NewEntity();
             entity.Get<UIdComponent>().Value = UidGenerator.Next();
+            entity.Get<PrefabComponent>().Value = "MainCamera";
+            entity.Get<EventAddComponent<PrefabComponent>>();
             entity.Get<CameraComponent>();
-            entity.Get<LinkComponent>().View = view;
-            view.Link(entity);
+            entity.Get<EventAddComponent<CameraComponent>>();
         }
 
         public void CreateDistanceTriggers()

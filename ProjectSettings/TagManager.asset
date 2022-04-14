@@ -9,6 +9,7 @@ TagManager:
   - Portal
   - Wall
   - DeactivePipe
+  - UiCamera
   layers:
   - Default
   - TransparentFX

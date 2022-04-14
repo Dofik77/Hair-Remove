@@ -15,11 +15,12 @@ namespace ECS.Views.GameCycle
         [SerializeField] private Animator _animator;
         [SerializeField] private Rigidbody _rigidbody;
         [SerializeField] private Transform _root;
+        [SerializeField] private Transform _cameraPoint;
         [SerializeField] private Collider _pushTrigger;
         [SerializeField] private SkinnedMeshRenderer _renderer;
         [SerializeField] private Material _damagedMaterial;
         [SerializeField] private Transform _shackle;
-        
+
         [SerializeField] private float _interactionDistance = 2.5f;
         [SerializeField] private float _interactionDuration = 0.4f;
 
@@ -59,6 +60,8 @@ namespace ECS.Views.GameCycle
         public ref float GetMovementSpeed() => ref _movementSpeed;
        
         public ref Collider GetPushTrigger() =>  ref _pushTrigger;
+
+        public ref Transform GetCameraPoint() => ref _cameraPoint;
       
         
         public ref float GetRigidbodyPushForceMultiplier()
